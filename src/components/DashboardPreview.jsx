@@ -52,7 +52,7 @@ function DashboardPreview() {
       <div className="dashboard-header">
 
         <div>
-          <small>LIVE MONITORING</small>
+          <small>LIVE MONITORIG</small>
           <h3>Factory Dashboard</h3>
         </div>
 
