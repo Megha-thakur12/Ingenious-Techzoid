@@ -1,0 +1,172 @@
+/* ==========================================
+   CLIENTS SECTION
+   ========================================== */
+
+.clients-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ==========================================
+   HEADING
+   ========================================== */
+
+.clients-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.clients-heading span {
+  display: block;
+  color: #305680;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.clients-heading h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.clients-heading h2 strong {
+  color: #305680;
+}
+
+.clients-heading p {
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ==========================================
+   SLIDER
+   ========================================== */
+
+.clients-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 25px;
+
+  animation: clientsScroll 25s linear infinite;
+}
+
+
+/* ==========================================
+   CLIENT LOGO
+   ========================================== */
+
+.client-logo {
+  width: 180px;
+  height: 100px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf0;
+  border-radius: 10px;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+  transform: translateY(-5px);
+  border-color: #305680;
+  box-shadow: 0 10px 25px rgba(48, 86, 128, 0.12);
+}
+
+.client-logo img {
+  max-width: 130px;
+  max-height: 60px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* ==========================================
+   ANIMATION
+   ========================================== */
+
+@keyframes clientsScroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  .clients-section {
+    padding: 60px 15px;
+  }
+
+  .clients-heading {
+    margin-bottom: 35px;
+  }
+
+  .clients-heading h2 {
+    font-size: 28px;
+  }
+
+  .clients-heading p {
+    font-size: 14px;
+  }
+
+  .client-logo {
+    width: 150px;
+    height: 85px;
+  }
+
+  .client-logo img {
+    max-width: 110px;
+    max-height: 50px;
+  }
+
+  .clients-track {
+    gap: 15px;
+    animation-duration: 20s;
+  }
+}

@@ -1,0 +1,691 @@
+
+/* =========================================================
+   INDUSTRIES PAGE
+========================================================= */
+
+.industries-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #172b3a;
+}
+/* .industries-hero::after {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    right: -130px;
+    top: 40px;
+    border: 1px solid rgba(48, 86, 128, 0.13);
+    border-radius: 50%;
+    box-shadow: 0 0 0 45px rgba(48, 86, 128, 0.025), 0 0 0 90px rgba(48, 86, 128, 0.018);
+    animation: aboutOrbit 12s linear infinite;
+} */
+.industries-page * {
+  box-sizing: border-box;
+}
+
+.industries-container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.industries-hero {
+  position: relative;
+
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 8%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef5fa,
+      #ffffff
+    );
+
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.industries-hero.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   HERO ORBIT
+========================================================= */
+
+/* .industries-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  right: -130px;
+  top: 40px;
+
+  border: 1px solid rgba(48, 86, 128, 0.13);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 45px rgba(48, 86, 128, 0.025),
+    0 0 0 90px rgba(48, 86, 128, 0.018);
+
+  animation: industryOrbit 12s linear infinite;
+
+  pointer-events: none;
+} */
+
+@keyframes industryOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.industries-hero .industries-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin-left: 0;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.industry-label {
+  display: inline-block;
+
+  color: #305680;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.industries-hero h1 {
+  max-width: 850px;
+
+  margin: 0 0 25px;
+
+  color: #172b3a;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+}
+
+.industries-hero h1 span {
+  color: #305680;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.industries-hero p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #617080;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.industries-content {
+  padding: 100px 0;
+
+  background: #ffffff;
+
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  transition:
+    opacity 0.9s ease 0.15s,
+    transform 0.9s ease 0.15s;
+}
+
+.industries-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.industry-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.industry-card {
+  position: relative;
+
+  min-height: 285px;
+
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4ebf1;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* subtle top line */
+
+.industry-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: #305680;
+
+  transition: width 0.35s ease;
+}
+
+
+/* subtle background circle */
+
+.industry-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  right: -90px;
+  bottom: -90px;
+
+  border-radius: 50%;
+
+  background: #f5f8fb;
+
+  transition: 0.4s ease;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.industry-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #305680;
+
+  box-shadow:
+    0 18px 45px rgba(30, 60, 90, 0.10);
+}
+
+.industry-card:hover::before {
+  width: 100%;
+}
+
+.industry-card:hover::after {
+  transform: scale(1.5);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.industry-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.industry-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf2f8;
+
+  border-radius: 15px;
+
+  font-size: 26px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.industry-card:hover .industry-icon {
+  background: #305680;
+
+  transform: translateY(-2px) scale(1.05);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.industry-top > span {
+  color: #a4b1bc;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.industry-card h2 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 25px 0 12px;
+
+  color: #172b3a;
+
+  font-size: 23px;
+
+  line-height: 1.3;
+
+  transition: color 0.3s ease;
+}
+
+.industry-card:hover h2 {
+  color: #305680;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.industry-card p {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 330px;
+
+  margin: 0;
+
+  padding-bottom: 35px;
+
+  color: #687887;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.industry-arrow {
+  position: absolute;
+
+  right: 30px;
+  bottom: 25px;
+
+  z-index: 3;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dce6ec;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #305680;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.industry-card:hover .industry-arrow {
+  transform: translateX(5px);
+
+  background: #305680;
+
+  color: #ffffff;
+
+  border-color: #305680;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.industry-cta {
+  padding: 90px 8%;
+
+  background: #172b3a;
+
+  color: #ffffff;
+
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  transition:
+    opacity 0.8s ease 0.25s,
+    transform 0.8s ease 0.25s;
+}
+
+.industry-cta.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.industry-cta .industries-container {
+  max-width: 1200px;
+}
+
+
+/* CTA LABEL */
+
+.industry-cta .industry-label {
+  color: #9fc0dc;
+}
+
+
+/* CTA HEADING */
+
+.industry-cta h2 {
+  max-width: 850px;
+
+  margin: 10px 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 5vw, 60px);
+
+  line-height: 1.1;
+}
+
+.industry-cta h2 span {
+  color: #8db4d4;
+}
+
+
+/* CTA TEXT */
+
+.industry-cta p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #c7d2dc;
+
+  line-height: 1.7;
+}
+
+
+/* CTA BUTTON */
+
+.industry-cta a {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 14px 24px;
+
+  background: #ffffff;
+
+  color: #172b3a;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.industry-cta a:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .industries-hero {
+    padding: 75px 6%;
+  }
+
+  .industry-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .industries-hero {
+    min-height: 400px;
+
+    padding: 65px 6%;
+  }
+
+  .industries-hero h1 {
+    font-size: 42px;
+  }
+
+  .industries-hero p {
+    font-size: 16px;
+  }
+
+
+  /* orbit */
+
+  .industries-hero::after {
+    width: 300px;
+    height: 300px;
+
+    right: -180px;
+    top: 50px;
+  }
+
+
+  /* content */
+
+  .industries-content {
+    padding: 70px 0;
+  }
+
+
+  /* grid */
+
+  .industry-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  /* cards */
+
+  .industry-card {
+    min-height: 250px;
+
+    padding: 28px;
+  }
+
+  .industry-card h2 {
+    font-size: 21px;
+  }
+
+  .industry-card p {
+    font-size: 14px;
+  }
+
+
+  /* CTA */
+
+  .industry-cta {
+    padding: 70px 6%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .industries-hero h1 {
+    font-size: 36px;
+  }
+
+  .industries-hero {
+    padding: 60px 6%;
+  }
+
+}.industries-hero::after {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    right: -130px;
+    top: 40px;
+    border: 1px solid rgba(48, 86, 128, 0.13);
+    border-radius: 50%;
+    box-shadow: 0 0 0 45px rgba(48, 86, 128, 0.025), 0 0 0 90px rgba(48, 86, 128, 0.018);
+    animation: aboutOrbit 12s linear infinite;
+}.industries-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(48, 86, 128, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(48, 86, 128, 0.045) 1px, transparent 1px);
+    background-size: 45px 45px;
+    mask-image: linear-gradient(to right, black, transparent 75%);
+    pointer-events: none;
+}
+
